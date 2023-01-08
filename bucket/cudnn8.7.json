@@ -12,15 +12,14 @@
             "hash": "md5:15379516385a5d8c2ff9e785c3f68c29"
         }
     },
-    "depends": "cuda11.8",
+    "extract_dir": "cudnn-windows-x86_64-8.7.0.84_cuda11-archive",
     "installer": {
         "script": [
-            "$names = @('bin', 'include', 'lib')",
-            "$cudaDir = \"$(appdir $manifest.depends)\\current\"",
-            "foreach ($name in $names) {",
-            "    Copy-Item \"$dir\\$name\" \"$cudaDir\" -Recurse -Force",
-            "}"
+            "foreach ($cuda in $manifest.suggest.cuDNN) {\n    $cudaDir = \"$(appdir $cuda)\\current\"\n    if (!(Test-Path \"$cudaDir\\include\\cudnn.h\") -and (Test-Path \"$cudaDir\"))) {\n        Copy-Item \"$dir\\*\" \"$cudaDir\" -Recurse -Force\n        Write-Host \"Installed to $cudaDir\"\n    }\n}\n"
         ]
+    },
+    "suggest": {
+        "cuDNN": ["cuda11.8", "cuda10.2"]
     },
     "checkver": {
         "url": "https://developer.download.nvidia.com/compute/redist/cudnn/",
