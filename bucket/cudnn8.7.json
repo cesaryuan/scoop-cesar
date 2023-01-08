@@ -1,0 +1,29 @@
+{
+    "version": "8.7.0",
+    "description": "A GPU-accelerated library of primitives for deep neural networks.",
+    "homepage": "https://developer.nvidia.com/cudnn",
+    "license": {
+        "identifier": "Freeware",
+        "url": "https://docs.nvidia.com/deeplearning/sdk/cudnn-sla/index.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://developer.download.nvidia.com/compute/redist/cudnn/v8.7.0/local_installers/11.8/cudnn-windows-x86_64-8.7.0.84_cuda11-archive.zip",
+            "hash": "md5:15379516385a5d8c2ff9e785c3f68c29"
+        }
+    },
+    "depends": ".\\cuda11.8.json",
+    "installer": {
+        "script": [
+            "$names = @('bin', 'include', 'lib')",
+            "$cudaDir = \"$(appdir $manifest.depends)\\current\"",
+            "foreach ($name in $names) {",
+            "    Copy-Item \"$dir\\$name\" \"$cudaDir\" -Recurse -Force",
+            "}"
+        ]
+    },
+    "checkver": {
+        "url": "https://developer.download.nvidia.com/compute/redist/cudnn/",
+        "regex": "href=\"v([\\d\\.]+)/"
+    }
+}
