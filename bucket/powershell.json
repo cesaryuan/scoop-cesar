@@ -16,10 +16,21 @@
     "bin": "pwsh.exe",
     "shortcuts": [["pwsh.exe", "PowerShell"]],
     "pre_install": [
-        "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name dorado) scripts/DoradoUtils.psm1)",
         "$DocumentPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::MyDocuments)",
-        "Mount-ExternalRuntimeData -Source \"$persist_dir\\profile\" -Target \"$DocumentPath\\PowerShell\"",
-        "Remove-Module -Name DoradoUtils"
+        "$originProfilePath = \"$DocumentPath\\PowerShell\";",
+        "$persistProfilePath = \"$persist_dir\\profile\";",
+        "foreach ($profile in @(\"Microsoft.PowerShell_profile.ps1\", \"profile.ps1\", \"Microsoft.VSCode_profile.ps1\")) {",
+        "    $Source = \"$persistProfilePath\\$profile\"",
+        "    $Target = \"$originProfilePath\\$profile\"",
+        "    if (Test-Path $Source) {",
+        "        Remove-Item $Target -Force -ErrorAction SilentlyContinue",
+        "        New-Item -ItemType HardLink -Path $Target -Target $Source -Force | Out-Null",
+        "    } else {",
+        "        if (Test-Path $Target) {",
+        "            New-Item -ItemType HardLink -Path $Source -Target $Target -Force | Out-Null",
+        "        }",
+        "    }",
+        "}"
     ],
     "checkver": {
         "url": "https://raw.githubusercontent.com/PowerShell/PowerShell/master/README.md",
