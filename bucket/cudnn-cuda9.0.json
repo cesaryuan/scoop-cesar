@@ -12,7 +12,7 @@
     "architecture": {
         "64bit": {
             "url": "https://developer.download.nvidia.cn/compute/redist/cudnn/v7.6.5/cudnn-9.0-windows10-x64-v7.6.5.32.zip",
-            "hash": "md5:ada567b2842f5ca0489b65cbfea27575"
+            "hash": "md5:ceda1a5b931b9103a1e2625e8b763179"
         }
     },
     "extract_dir": "cuda",
