@@ -12,7 +12,7 @@
             "hash": "md5:15379516385a5d8c2ff9e785c3f68c29"
         }
     },
-    "depends": ".\\cuda11.8.json",
+    "depends": "cuda11.8",
     "installer": {
         "script": [
             "$names = @('bin', 'include', 'lib')",
