@@ -1,5 +1,5 @@
 {
-    "version": 6,
+    "version": "6.0",
     "description": "A GPU-accelerated library of primitives for deep neural networks.",
     "homepage": "https://developer.nvidia.com/cudnn",
     "license": {
