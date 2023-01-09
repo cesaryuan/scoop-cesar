@@ -15,17 +15,17 @@
     "installer": {
         "script": [
             "$documentPath = [Environment]::GetFolderPath('MyDocuments')",
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name cesar) scripts/DoradoUtils.psm1)",
-            "Mount-ExternalRuntimeData -Source \"$persist_dir\\documentPath\" -Target \"$documentPath\\RoslynPad\"",
-            "Remove-Module -Name DoradoUtils"
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name cesar) scripts/CesarUtils.psm1)",
+            "PersistCustomConfig -PersistDir \"$persist_dir\" -ConfigDir \"$documentPath\\RoslynPad\"",
+            "Remove-Module -Name CesarUtils"
         ]
     },
     "uninstaller": {
         "script": [
             "$documentPath = [Environment]::GetFolderPath('MyDocuments')",
-            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name cesar) scripts/DoradoUtils.psm1)",
-            "Dismount-ExternalRuntimeData -Target \"$documentPath\\RoslynPad\"",
-            "Remove-Module -Name DoradoUtils"
+            "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name cesar) scripts/CesarUtils.psm1)",
+            "RemoveConfigJunction -Junction \"$documentPath\\RoslynPad\"",
+            "Remove-Module -Name CesarUtils"
         ]
     },
     "bin": "RoslynPad.exe",
