@@ -20,7 +20,7 @@ function PersistCustomConfig {
     )
     Write-Host "Persisting custom config from $ConfigDir to $PersistDir"
     # if ConfigDir is a junction to PersistDir, do nothing
-    if (Test-Path $ConfigDir -PathType Junction) {
+    if (isJunction $ConfigDir) {
         $junction = Get-Item $ConfigDir
         if ($junction.Target -eq $PersistDir) {
             return
@@ -61,7 +61,7 @@ function RemoveConfigJunction {
     if (!(Test-Path $Junction)) {
         return
     }
-    if (Test-Path $Junction -PathType Junction) {
+    if (isJunction $Junction) {
         Remove-Item $Junction -Force
     }
 }
@@ -69,3 +69,10 @@ function abort($msg, [int] $exit_code=1) { write-host $msg -f red; exit $exit_co
 function error($msg) { write-host "ERROR $msg" -f darkred }
 function warn($msg) {  write-host "WARN  $msg" -f darkyellow }
 function success($msg) { write-host "$msg" -f darkgreen }
+
+function isJunction($path) {
+    if ((Get-Item -Path $path).LinkType -eq "Junction") {
+        return $true
+    }
+    return $false
+}
