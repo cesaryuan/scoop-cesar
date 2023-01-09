@@ -1,15 +1,19 @@
 #Requires -Version 5.1
 Set-StrictMode -Version 3.0
-function PersistCustomConfig {
+function PersistConfigWithJunction {
     <#
     .SYNOPSIS
-        Persist Custom Config
+        Persist config with junction. Handles the following cases:
+        1. If there is no config_dir, create a junction from config_dir to persist_dir
+        2. If there is a config_dir, and it's a junction to persist_dir, do nothing
+        3. If there is a config_dir, and it's not a junction, move it's contents to persist_dir, and create a junction from config_dir to persist_dir
+        4. If there is a config_dir, and it's a junction to a different path, move it's contents to persist_dir, and create a junction from config_dir to persist_dir
 
     .PARAMETER PersistDir
-        The source path, which is the persist_dir
+        The path to persist the config
 
     .PARAMETER ConfigDir
-        The target path, which is the actual path app uses to store the config
+        The path to the config directory
     #>
     [CmdletBinding()]
     param (
@@ -18,9 +22,10 @@ function PersistCustomConfig {
         [Parameter(Mandatory = $true, Position = 1)]
         [string] $ConfigDir
     )
-    Write-Host "Persisting custom config from $ConfigDir to $PersistDir"
+    Write-Host "Persisting config from $ConfigDir to $PersistDir (Create junction)"
+
     # if ConfigDir is a junction to PersistDir, do nothing
-    if (isJunction $ConfigDir) {
+    if ((Test-Path $ConfigDir) -and (isJunction $ConfigDir)) {
         $junction = Get-Item $ConfigDir
         if ($junction.Target -eq $PersistDir) {
             return
@@ -44,30 +49,34 @@ function PersistCustomConfig {
         Remove-Item $ConfigDir
     }
     # create a junction from config_dir to persist_dir
-    New-Item -ItemType Junction -Path $ConfigDir -Target $PersistDir -Force
+    New-Item -ItemType Junction -Path $ConfigDir -Target $PersistDir -Force | Out-Null
 }
 
 function RemoveConfigJunction {
     <#
     .SYNOPSIS
-        Remove Junction
+        Remove config junction created by PersistConfigWithJunction. Handles the following cases:
+        1. If there is no config_dir, do nothing
+        2. If there is a config_dir, and it's a junction to persist_dir, remove the junction
     #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory = $true, Position = 0)]
-        [string] $Junction
+        [string] $PersistDir,
+        [Parameter(Mandatory = $true, Position = 1)]
+        [string] $ConfigDir
     )
-    # if it's a junction, remove it
-    if (!(Test-Path $Junction)) {
-        return
-    }
-    if (isJunction $Junction) {
-        Remove-Item $Junction -Force
+    Write-Host "Removing junction from $ConfigDir to $PersistDir"
+    if ((Test-Path $ConfigDir) -and (isJunction $ConfigDir)) {
+        $junction = Get-Item $ConfigDir
+        if ($junction.Target -eq $PersistDir) {
+            Remove-Item $ConfigDir
+        }
     }
 }
 function abort($msg, [int] $exit_code=1) { write-host $msg -f red; exit $exit_code }
 function error($msg) { write-host "ERROR $msg" -f darkred }
-function warn($msg) {  write-host "WARN  $msg" -f darkyellow }
+function warn($msg) {  write-host "WARN $msg" -f darkyellow }
 function success($msg) { write-host "$msg" -f darkgreen }
 
 function isJunction($path) {
