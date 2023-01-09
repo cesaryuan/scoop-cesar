@@ -22,6 +22,7 @@
     },
     "uninstaller": {
         "script": [
+            "$documentPath = [Environment]::GetFolderPath('MyDocuments')",
             "Import-Module $(Join-Path $(Find-BucketDirectory -Root -Name cesar) scripts/DoradoUtils.psm1)",
             "Dismount-ExternalRuntimeData -Target \"$documentPath\\RoslynPad\"",
             "Remove-Module -Name DoradoUtils"
