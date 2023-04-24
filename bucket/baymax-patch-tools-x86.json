@@ -22,6 +22,6 @@
         "re": "(?<tag>\\w+)\\/Baymax\\.Patch\\.Tools\\.v(?<version>\\d+\\.\\d+(?:\\.\\d+)?)\\.zip"
     },
     "autoupdate": {
-        "url": "https://github.com/sicaril/Baymax-Patch-toOls/releases/download/$matchTag/Baymax.Patch.Tools.v$version.zip"
+        "url": "https://github.com/sicaril/Baymax-Patch-toOls/releases/download/$matchTag/Baymax.Patch.Tools.v$version.zip#dl.zip_"
     }
 }
