@@ -1,10 +1,10 @@
 {
-    "version": "0.3.6",
+    "version": "0.4.0",
     "description": "一个跨平台的划词翻译软件 | A cross-platform translation software",
     "homepage": "https://pot.pylogmon.com/",
     "license": "MIT",
-    "url": "https://github.com/pot-app/pot-desktop/releases/download/0.3.6/pot_0.3.6_x64_zh-CN.msi",
-    "hash": "37a8e54636cb6f1272fe54570ed40a0d89e3042a0485e73e322ff23c8a27c706",
+    "url": "https://github.com/pot-app/pot-desktop/releases/download/0.4.0/pot_0.4.0_x64_zh-CN.msi",
+    "hash": "5b01f4557e4f10fde66e91442298b952e493d579b31121c6f2edd9e8f2c9e111",
     "shortcuts": [
         [
             "pot.exe",
