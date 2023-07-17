@@ -1,15 +1,15 @@
 {
     "homepage": "https://github.com/cnlh/nps",
-    "version": "0.26.13",
+    "version": "0.26.17",
     "license": "GPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/cesaryuan/nps/releases/download/v0.26.13/windows_amd64_client.tar.gz",
-            "hash": "388c0362a16a185cb041c061258121b60b04e55427f7cab6f43452c3bf9e195b"
+            "url": "https://github.com/cesaryuan/nps/releases/download/v0.26.17/windows_amd64_client.tar.gz",
+            "hash": "193c992d4b5fe1d48419a3f0fe922eb83725b7805d66b8a4e1c59edff71917b4"
         },
         "32bit": {
-            "url": "https://github.com/cesaryuan/nps/releases/download/v0.26.13/windows_386_client.tar.gz",
-            "hash": "21dcc6b5882346ed26af3bf0a079d6dc902f9e2a958ab358f25b1b621903e90f"
+            "url": "https://github.com/cesaryuan/nps/releases/download/v0.26.17/windows_386_client.tar.gz",
+            "hash": "978db82fbe17954fb3c87cb811e42977def683be7b0c65c793d963cca5f26cc6"
         }
     },
     "persist": "conf",
