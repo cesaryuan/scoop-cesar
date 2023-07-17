@@ -19,6 +19,10 @@
     ],
     "checkver": {
         "url": "https://bbs.kanxue.com/thread-224408.htm",
-        "re": "(\\d+/\\d+/\\d+)"
+        "re": "(\\d+)/(\\d+)/(\\d+)",
+        "replace": "$1.$2.$3"
+    },
+    "autoupdate": {
+        "url": "https://github.com/cesaryuan/scoop-cesar/raw/master/store/404.zip"
     }
 }
