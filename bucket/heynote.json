@@ -1,0 +1,34 @@
+{
+    "version": "1.6.0",
+    "description": "A dedicated scratchpad for developers",
+    "homepage": "https://github.com/heyman/heynote",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/heyman/heynote/releases/download/v1.6.0/Heynote_1.6.0.exe#/dl.7z",
+            "hash": "sha512:a569c63d25c10612f08beace21c02751543c269b975ed9b57afa546db80fe87ae282ced8d29011384aebb21e08bbff4392d4e5a2a263e07a0e426f3a20da8a32"
+        }
+    },
+    "pre_install": [
+        "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+        "Remove-Item \"$dir\\`$*\" -Recurse"
+    ],
+    "shortcuts": [
+        [
+            "Heynote.exe",
+            "Heynote"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/heyman/heynote/releases/download/v$version/Heynote_$version.exe#/dl.7z",
+                "hash": {
+                    "url": "$baseurl/latest.yml",
+                    "regex": "sha512:\\s+$base64"
+                }
+            }
+        }
+    }
+}
