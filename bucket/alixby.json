@@ -1,19 +1,45 @@
 {
-    "version": "3.12.1",
-    "description": "小白羊网盘 - Powered by 阿里云盘。",
+    "version": "3.12.5",
+    "description": "小白羊网盘，阿里云盘第三方客户端",
     "homepage": "https://github.com/gaozhangmin/aliyunpan",
-    "license": "BSD-3-Clause",
-    "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.1/XBYDriver-3.12.1-win-x64.exe#/dl.7z",
-    "installer": {
-        "script": [
-            "Expand-7ZipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
-            "Remove-Item \"$dir\\`$R0\",\"$dir\\`$PLUGINSDIR\"  -Force -Recurse"
-        ]
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-x64.exe#/dl.7z",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
+            "hash": "91debb452219c904564548597ef44232f46e5e8f1aa80c2500bb49d5f3b43117"
+        },
+        "32bit": {
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-ia32.exe#/dl.7z",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
+            "hash": "8bfc076845794166bf8038e26f081bbe99a8a63c3dcd97d97dbe0a5329e2bae3"
+        },
+        "arm64": {
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-arm64.exe#/dl.7z",
+            "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\"",
+            "hash": "4ac6f7e3b5f7773e707a1dde970a73153f2c24fc33c4b8b563d365b775206879"
+        }
     },
+    "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\resources\\app-update.yml\"  -Force -Recurse",
     "shortcuts": [
         [
             "小白羊云盘.exe",
             "小白羊云盘"
         ]
-    ]
+    ],
+    "checkver": "github",
+    "notes": "alibyx is NOT portable.",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v$version/XBYDriver-$version-win-x64.exe#/dl.7z"
+            },
+            "32bit": {
+                "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v$version/XBYDriver-$version-win-ia32.exe#/dl.7z"
+            },
+            "arm64": {
+                "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v$version/XBYDriver-$version-win-arm64.exe#/dl.7z"
+            }
+        }
+    }
 }
