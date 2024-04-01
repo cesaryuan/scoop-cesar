@@ -3,7 +3,7 @@
     "version": "19.0d5e3",
     "homepage": "https://blog.dsrkafuu.net/post/2020/extract-sf-pingfang",
     "license": "Unknown",
-    "url": "https://github.com/cesaryuan/scoop-cesar/raw/master/store/PingFang-Mod-19.0d5e3-SC-Regular.zip",
+    "url": "https://github.com/cesaryuan/scoop-cesar/raw/master/store/PingFang-Mod-19.0d5e3-SC.zip",
     "hash": "CC9E8A3F91F22F7F3C78308AFA67E11E74BEC4B41A30624D0E6C9CC42123BEC9",
     "installer": {
         "script": [
