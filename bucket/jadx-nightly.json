@@ -1,13 +1,13 @@
 {
-    "version": "1.4.7.311-54bf79cc",
+    "version": "1.5.0.316-b80f32a3",
     "description": "Dex to Java decompiler",
     "homepage": "https://github.com/skylot/jadx",
     "license": "Apache-2.0",
     "suggest": {
         "JRE": "java/openjdk"
     },
-    "url": "https://nightly.link/skylot/jadx/workflows/build-artifacts/master/jadx-1.4.7.311-54bf79cc.zip",
-    "hash": "eaf3a188ee1ac9d6fcf6f0b329cc60e243d28f5793295461c5d032c944b4039d",
+    "url": "https://nightly.link/skylot/jadx/workflows/build-artifacts/master/jadx-1.5.0.316-b80f32a3.zip",
+    "hash": "4500b9f12986d445ae83e093300e8688f98d19d04eb18a7545109ee6a47ada40",
     "bin": [
         [
             "bin\\jadx.bat",
