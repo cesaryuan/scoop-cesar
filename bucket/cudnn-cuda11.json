@@ -1,5 +1,5 @@
 {
-    "version": "8.7.0",
+    "version": "8.8.0",
     "description": "A GPU-accelerated library of primitives for deep neural networks.",
     "homepage": "https://developer.nvidia.com/cudnn",
     "license": {
@@ -11,22 +11,14 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://developer.download.nvidia.com/compute/redist/cudnn/v8.7.0/local_installers/11.8/cudnn-windows-x86_64-8.7.0.84_cuda11-archive.zip",
-            "hash": "md5:15379516385a5d8c2ff9e785c3f68c29"
+            "url": "https://developer.download.nvidia.cn/compute/redist/cudnn/v8.8.0/local_installers/11.8/cudnn_8.8.0.121_windows.exe#/dl.7z",
+            "hash": "926f0e1d2ff516eab2aecd6d2b59515fff02ea55f8455ce02b6451e7c5544717"
         }
     },
-    "extract_dir": "cudnn-windows-x86_64-8.7.0.84_cuda11-archive",
+    "extract_dir": "cudnn\\libcudnn",
     "env_add_path": "bin",
     "suggest": {
         "cuDNN": [
-            "cuda11.0",
-            "cuda11.1",
-            "cuda11.2",
-            "cuda11.3",
-            "cuda11.4",
-            "cuda11.5",
-            "cuda11.6",
-            "cuda11.7",
             "cuda11.8"
         ]
     }

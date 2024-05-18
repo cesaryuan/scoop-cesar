@@ -1,23 +1,23 @@
 {
-    "version": "3.12.5",
+    "version": "3.13.3",
     "description": "小白羊网盘，阿里云盘第三方客户端",
     "homepage": "https://github.com/gaozhangmin/aliyunpan",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-x64.exe#/dl.7z",
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.13.3/XBYDriver-3.13.3-win-x64.exe#/dl.7z",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\"",
-            "hash": "91debb452219c904564548597ef44232f46e5e8f1aa80c2500bb49d5f3b43117"
+            "hash": "f6cfe070759558a26b3df04de2494c8cd896a4bd94167dfbe9a7f08938b83699"
         },
         "32bit": {
-            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-ia32.exe#/dl.7z",
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.13.3/XBYDriver-3.13.3-win-ia32.exe#/dl.7z",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-32.7z\" \"$dir\"",
-            "hash": "8bfc076845794166bf8038e26f081bbe99a8a63c3dcd97d97dbe0a5329e2bae3"
+            "hash": "1ddc666b36971f6d440b4283ad3a1d194c74761b5c39711a89619a142c58b2fe"
         },
         "arm64": {
-            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.12.5/XBYDriver-3.12.5-win-arm64.exe#/dl.7z",
+            "url": "https://github.com/gaozhangmin/aliyunpan/releases/download/v3.13.3/XBYDriver-3.13.3-win-arm64.exe#/dl.7z",
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-arm64.7z\" \"$dir\"",
-            "hash": "4ac6f7e3b5f7773e707a1dde970a73153f2c24fc33c4b8b563d365b775206879"
+            "hash": "1c17a93e52c66d7afbf01f95607d000f144613b1257e3caaab43d62191103d84"
         }
     },
     "post_install": "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\", \"$dir\\resources\\app-update.yml\"  -Force -Recurse",

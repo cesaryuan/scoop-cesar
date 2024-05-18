@@ -1,10 +1,10 @@
 {
-    "version": "2.4.12",
+    "version": "2.4.15",
     "description": "非付费会员，fofa 数据采集工具",
     "homepage": "https://github.com/Cl0udG0d/Fofa-hack",
     "license": "GPL-2.0-only",
-    "url": "https://github.com/Cl0udG0d/Fofa-hack/releases/download/v2.4.12/fofa-hack_win_amd64.exe",
-    "hash": "65999fca370ea838a73cc470d79bd4332e6b36284101f8b024392f3387d7e966",
+    "url": "https://github.com/Cl0udG0d/Fofa-hack/releases/download/v2.4.15/fofa-hack_win_amd64.exe",
+    "hash": "c2ea129ab70d39b17cbd7d660db9f44620a06be62c55477735d0bebaa96164c1",
     "bin": [
         [
             "fofa-hack_win_amd64.exe",
