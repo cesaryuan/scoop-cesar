@@ -15,6 +15,9 @@
             "extract_dir": "WKE64"
         }
     },
+    "persist": [
+        "WindowsKernelExplorer.ini"
+    ],
     "shortcuts": [
         [
             "WindowsKernelExplorer.exe",
