@@ -1,15 +1,15 @@
 {
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "Signature maker plugin for IDA 8.x",
     "homepage": "https://github.com/A200K/IDA-Pro-SigMaker",
     "license": "MIT",
     "url": [
-        "https://github.com/A200K/IDA-Pro-SigMaker/releases/download/v1.0.3/SigMaker64.dll",
-        "https://github.com/A200K/IDA-Pro-SigMaker/releases/download/v1.0.3/SigMaker.dll"
+        "https://github.com/A200K/IDA-Pro-SigMaker/releases/download/v1.0.5/SigMaker64.dll",
+        "https://github.com/A200K/IDA-Pro-SigMaker/releases/download/v1.0.5/SigMaker.dll"
     ],
     "hash": [
-        "b5913648ac66df703d0e18861d2050df71c0892d52347e360f0e5f21166e1144",
-        "9b9f50b85afddb34df1d50782584626327ab13650f6d303aaeb3e1bff9e36f0d"
+        "39079a1b2f9fe17f74e1f1099b96b9d3f58f2305f01396c2c998e5b486e8beb4",
+        "7d17b777258a7ec47048bf967d86b41705f7f9f27be73c25804723664dcf0cb0"
     ],
     "pre_install": [
         "# Check if $env:IDA_PRO_DIR\\ida64.exe exists",
