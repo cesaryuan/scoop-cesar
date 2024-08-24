@@ -1,0 +1,21 @@
+{
+    "version": "0.23.0",
+    "description": "This is a CLI utility for displaying current network utilization by process, connection and remote IP/hostname.",
+    "homepage": "https://github.com/imsnif/bandwhich",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/imsnif/bandwhich/releases/download/v0.23.0/bandwhich-v0.23.0-x86_64-pc-windows-msvc.zip",
+            "hash": "85d8208240a54fa17d4744cdb6edb3bf66a47e68ab3345cb5f1c4df6b0803f59"
+        }
+    },
+    "bin": "bandwhich.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/imsnif/bandwhich/releases/download/v$version/bandwhich-v$version-x86_64-pc-windows-msvc.zip"
+            }
+        }
+    }
+}
