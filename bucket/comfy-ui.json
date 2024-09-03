@@ -12,12 +12,14 @@
     "extract_dir": "ComfyUI_windows_portable",
     "bin": [
         [
-            "run_cpu.bat",
-            "ComfyUI_CPU"
+            "python_embeded\\python.exe",
+            "ComfyUI_Nvidia",
+            "-s $dir\\ComfyUI\\main.py --windows-standalone-build"
         ],
         [
-            "run_nvidia_gpu.bat",
-            "ComfyUI_Nvidia"
+            "python_embeded\\python.exe",
+            "ComfyUI_CPU",
+            "-s $dir\\ComfyUI\\main.py --cpu --windows-standalone-build"
         ]
     ],
     "shortcuts": [
