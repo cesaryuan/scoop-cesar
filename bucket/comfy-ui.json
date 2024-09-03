@@ -10,6 +10,16 @@
         }
     },
     "extract_dir": "ComfyUI_windows_portable",
+    "bin": [
+        [
+            "run_cpu.bat",
+            "ComfyUI_CPU"
+        ],
+        [
+            "run_nvidia_gpu.bat",
+            "ComfyUI_Nvidia"
+        ]
+    ],
     "shortcuts": [
         [
             "run_cpu.bat",
