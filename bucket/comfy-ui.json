@@ -31,6 +31,9 @@
         ]
     ],
     "checkver": "github",
+    "persist": [
+        "ComfyUI/models"
+    ],
     "autoupdate": {
         "architecture": {
             "64bit": {
