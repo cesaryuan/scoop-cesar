@@ -15,10 +15,10 @@
     ],
     "checkver": {
         "url": "https://learn.microsoft.com/en-us/windows/win32/debug/system-error-code-lookup-tool",
-        "re": "https://(?<url>download.microsoft.com/download/(\\w+)/(\\w+)/(\\w)/[\\w-]+/Err_(?<version>\\d+\\.\\d+\\.\\d+?)/Err_(\\d+\\.\\d+\\.\\d+?).exe)",
+        "re": "https://download.microsoft.com/download/(?<url>(\\w+)/(\\w+)/(\\w)/[\\w-]+/Err_(?<version>\\d+\\.\\d+\\.\\d+?)/Err_(\\d+\\.\\d+\\.\\d+?).exe)",
         "replace": "${version}"
     },
     "autoupdate": {
-        "url": "https://$matchUrl"
+        "url": "https://download.microsoft.com/download/$matchUrl"
     }
 }
