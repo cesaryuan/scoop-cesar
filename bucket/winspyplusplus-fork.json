@@ -10,7 +10,7 @@
             "shortcuts": [
                 [
                     "winspy.exe",
-                    "WinSpy++"
+                    "WinSpy++ (fork)"
                 ]
             ]
         },
@@ -18,7 +18,7 @@
             "shortcuts": [
                 [
                     "winspy32.exe",
-                    "WinSpy++"
+                    "WinSpy++ (fork)"
                 ]
             ]
         }
