@@ -1,0 +1,25 @@
+{
+    "version": "1.5.3",
+    "description": "",
+    "homepage": "https://github.com/[username]/[repo]",
+    "license": "Freeware",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/[username]/[repo]/releases/download/$version/[filename].exe",
+            "hash": ""
+        }
+    },
+    "bin": [
+        "[filename].exe"
+    ],
+    "shortcuts": [
+        [
+            "[filename].exe",
+            "[name]"
+        ]
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/[username]/[repo]/releases/download/$version/[filename].exe"
+    }
+}
