@@ -1,12 +1,12 @@
 {
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "GO Simple Tunnel - a simple tunnel written in golang",
     "homepage": "https://github.com/go-gost/gost",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/go-gost/gost/releases/download/v3.0.0/gost_3.0.0_windows_amd64.zip",
-            "hash": "8f57facc8afc631e51a0f6f76a6d390f6eb3aa6b7af7290ca5b7c59ad85aab59"
+            "url": "https://github.com/go-gost/gost/releases/download/v3.1.0/gost_3.1.0_windows_amd64.zip",
+            "hash": "e1288fd6e6379741304a04094a255d809a08abb9d2dbfc641f95b9c81d268278"
         }
     },
     "bin": "gost.exe",
