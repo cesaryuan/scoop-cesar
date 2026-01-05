@@ -1,12 +1,12 @@
 {
-    "version": "2.0.3",
+    "version": "2.2.0",
     "description": "Keyguard is an alternative client for the Bitwarden® platform, created to provide the best user experience possible.",
     "homepage": "https://github.com/AChep/keyguard-app",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/AChep/keyguard-app/releases/download/r20251229/Keyguard-2.0.3.msi",
-            "hash": "1628d70a1580827af42d2611381a33047e97a4481b44ef2bc7982fb6d1ff1805"
+            "url": "https://github.com/AChep/keyguard-app/releases/download/r20260105/Keyguard-2.2.0.msi",
+            "hash": "9402c514a5bb7b08b397d526c1c4fdd6abc2c5be47f921f11c6eadb2b515baf8"
         }
     },
     "extract_dir": "Keyguard",
